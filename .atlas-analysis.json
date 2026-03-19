@@ -1,0 +1,102 @@
+{
+  "projectType": "saas",
+  "projectName": "BatteryForm — Inspección de Baterías",
+  "projectDescription": "A Progressive Web App (PWA) for offline-first technical inspection and registration of industrial batteries, with automatic synchronization to Google Sheets when connectivity is available.",
+  "theme": "almond",
+  "primaryColor": "#ee6d2c",
+  "lightColor": "#36aa55",
+  "darkColor": "#7ba7f0",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "installation"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/inspection-form",
+              "features/battery-references",
+              "features/daily-history",
+              "features/offline-sync"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/google-sheets",
+              "configuration/environment-variables",
+              "configuration/pwa-install"
+            ]
+          },
+          {
+            "group": "Architecture",
+            "pages": [
+              "architecture/overview",
+              "architecture/data-flow",
+              "architecture/service-worker"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Modules",
+            "pages": [
+              "api/references",
+              "api/sync",
+              "api/database",
+              "api/pwa"
+            ]
+          },
+          {
+            "group": "Types",
+            "pages": [
+              "api/types"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Offline-first PWA that works without internet connection",
+    "Battery inspection form with visual and measurement fields",
+    "Custom battery reference management with charge/weight validation ranges",
+    "Automatic synchronization to Google Sheets with exponential backoff retry",
+    "Background Sync API via Service Worker for connection recovery",
+    "IndexedDB local storage for pending records and custom references",
+    "Daily history view of inspection records",
+    "Installable as a standalone app on mobile and desktop"
+  ],
+  "publicApiSurface": [
+    "BatteryReference interface",
+    "BatteryRecord interface",
+    "SyncResult interface",
+    "getAllReferences()",
+    "getReferencesForSelect()",
+    "getReferenceById(code)",
+    "saveCustomReference(reference)",
+    "deleteCustomReference(id)",
+    "getCustomReferences()",
+    "getReferencesByVoltage(voltage)",
+    "sendRecord(record)",
+    "sendRecordsWithRetry(records, onProgress?)",
+    "startAutoSync()",
+    "stopAutoSync()",
+    "setCustomReferencesStorage(storage)",
+    "getCacheInfo()",
+    "getCacheSize()",
+    "clearAllCaches()",
+    "useOnlineStatus() hook"
+  ]
+}
